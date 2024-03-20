@@ -1,27 +1,24 @@
 import { get, writable } from 'svelte/store'
-import { slides } from '$lib/slides'
+import slides from '$lib/slides'
 
-export const createSlidesStore = () => {
-	const { subscribe, update } = writable(0)
+export const slidesStore = writable(0)
 
-	return {
-		subscribe,
-		next: () => {
-			if (slides.length - 1 >= get({ subscribe })) {
-				update(() => slides.length - 1)
-				return
-			}
-			update((v) => v + 1)
-		},
-		back: () => {
-			if (get({ subscribe }) <= 0) {
-				update(() => 0)
-				return
-			}
-			update((v) => v - 1)
-		},
-		reset: () => update(() => 0)
-	}
+export const nextSlide = () => {
+	slidesStore.update((slide) => {
+		if (slide < slides.length - 1) {
+			return slide + 1
+		}
+		return slide
+	})
 }
-
-export const slidesStore = createSlidesStore()
+export const backSlide = () => {
+	slidesStore.update((slide) => {
+		if (slide > 0) {
+			return slide - 1
+		}
+		return slide
+	})
+}
+export const resetSlides = () => {
+	slidesStore.set(0)
+}

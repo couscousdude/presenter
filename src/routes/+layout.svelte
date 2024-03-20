@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '$lib/app.css'
-	import { slidesStore } from '$lib/stores/stores'
+	import { backSlide, nextSlide, slidesStore } from '$lib/stores/stores'
 	import { onMount } from 'svelte'
-	import { slides } from '$lib/slides'
+	import slides from '$lib/slides'
 
 	let audio: HTMLAudioElement
 	let audioPlaying: boolean = false
@@ -24,10 +24,20 @@
 
 		switch (e.key) {
 			case 'ArrowLeft':
-				slidesStore.back()
+				backSlide()
 				break
 			case 'ArrowRight':
-				slidesStore.next()
+				nextSlide()
+				break
+			case 'ArrowUp':
+				if (audio.volume <= 1) {
+					audio.volume += 0.1
+				}
+				break
+			case 'ArrowDown':
+				if (audio.volume >= 0) {
+					audio.volume -= 0.1
+				}
 				break
 			case ' ':
 				toggle()
