@@ -2,6 +2,7 @@
 	import '$lib/app.css'
 	import { slidesStore } from '$lib/stores/stores'
 	import { onMount } from 'svelte'
+	import { slides } from '$lib/slides'
 
 	let audio: HTMLAudioElement
 	let audioPlaying: boolean = false
@@ -49,3 +50,7 @@
 </audio>
 
 <svelte:document on:keydown={keydown} />
+
+{#each slides as slide}
+	<link rel="prefetch" href="/assets/clips/{slide}.mp4" />
+{/each}
