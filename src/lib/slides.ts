@@ -23,6 +23,7 @@ const slides: string[] = [
 	'Slide19',
 	'Slide20',
 	'Slide21',
+	'Slide22',
 	'Credits'
 ]
 
