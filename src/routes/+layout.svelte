@@ -15,10 +15,6 @@
 		}
 	}
 
-	onMount(() => {
-		audio.readyState >= 2 && audio.play()
-	})
-
 	const keydown = (e: KeyboardEvent) => {
 		e.preventDefault()
 

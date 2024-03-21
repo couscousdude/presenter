@@ -1,4 +1,5 @@
 const slides: string[] = [
+	'Blank',
 	'Slide1',
 	'Intro',
 	'Slide2',
