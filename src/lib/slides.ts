@@ -1,10 +1,3 @@
-const slides: string[] = [
-	'START_INTERNAL',
-	'Intro',
-	'CorrectLaTeXSubstringColoring',
-	'Intro',
-	'CorrectLaTeXSubstringColoring',
-	'END_INTERNAL'
-]
+const slides: string[] = ['Slide1', 'Intro', 'CorrectLaTeXSubstringColoring']
 
 export default slides
