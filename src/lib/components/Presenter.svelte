@@ -14,6 +14,8 @@
 
 		if (e.key === 'k') {
 			video.paused ? video.play() : video.pause()
+		} else if (e.key === 'f') {
+			video.requestFullscreen()
 		}
 	}
 </script>
