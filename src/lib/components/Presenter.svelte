@@ -8,7 +8,17 @@
 	onMount(() => {
 		// if (video.requestFullscreen) video.requestFullscreen()
 	})
+
+	const keydown = (e: KeyboardEvent) => {
+		e.preventDefault()
+
+		if (e.key === 'k') {
+			video.paused ? video.play() : video.pause()
+		}
+	}
 </script>
+
+<svelte:document on:keydown={keydown} />
 
 <div class="fixed inset-0 w-full h-full z-50">
 	<video
