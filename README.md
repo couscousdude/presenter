@@ -16,7 +16,7 @@ Lesson learned: I probably should've just used
 
 ## Demo
 
-You can view a demo at [this link](https://econ-present1.vercel.app/). Try pressing the arrow keys!
+You can view a demo at [this link](https://econ.youwen.dev/). Try pressing the arrow keys!
 
 Alternatively, host a local version by cloning the repository, then ensure you have `pnpm` and
 nodejs installed, and run:
